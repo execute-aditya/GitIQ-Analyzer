@@ -12,7 +12,7 @@
 
 ## 🌐 Live Demo
 
-👉 https://your-demo-link.vercel.app
+👉 https://git-iq-analyzer.vercel.app
 
 ---
 
@@ -143,15 +143,3 @@ Star the repo ⭐
 Fork the repo 🍴
 
 Share with others 🚀
-
-
----
-
-If you want, I can now give you:
-
-- 🔥 Advanced AI score calculation logic (production-level)
-- 🔥 Supabase Edge Function full code
-- 🔥 Clean GitHub profile banner
-- 🔥 Hackathon-winning README design
-
-Tell me what level you want next 🚀
