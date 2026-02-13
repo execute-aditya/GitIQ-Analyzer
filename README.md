@@ -1,98 +1,222 @@
-# GitIQ Analyzer
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitIQ Analyzer - Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292f;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+        }
+        h1, h2, h3 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: .3em;
+        }
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: .3em;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        a {
+            color: #0969da;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        li > ul {
+            margin-top: 4px;
+        }
+        code {
+            padding: .2em .4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: #afb8c133;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        }
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+            overflow: auto;
+            line-height: 1.45;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            font-size: 100%;
+            word-break: normal;
+            white-space: pre;
+        }
+        img {
+            max-width: 100%;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+        hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #e1e4e8;
+            border: 0;
+        }
+        blockquote {
+            margin: 0;
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+        }
+        .emoji {
+            font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        }
+    </style>
+</head>
+<body>
 
-GitIQ Analyzer is a small React + Vite app that analyzes a GitHub profile and provides metrics, visualizations, and an AI evaluation.
+    <h1>GitIQ Analyzer</h1>
 
-It fetches a user's public profile and repositories (via the GitHub API), computes metrics (stars, languages, activity, README coverage), and calls an AI gateway to provide a structured evaluation and improvement suggestions.
+    <p>GitIQ Analyzer is a modern, interactive tool designed to analyze GitHub profiles and provide deep insights into developer activity. It visualizes key metrics, language distribution, and repository performance using a sleek, responsive interface.</p>
 
-## Features
+    <p><img src="public/placeholder.svg" alt="Project Preview"></p>
 
-- Profile summary and repository metrics
-- Language distribution chart and top repositories
-- AI-driven evaluation and improvement tips
-- Recent analyses saved in browser localStorage
-- Serverless analysis function implemented as a Supabase/Deno function
+    <h2><span class="emoji">🚀</span> Features</h2>
+    <ul>
+        <li><strong>Comprehensive Profile Analysis</strong>: Instantly fetch and analyze any public GitHub profile.</li>
+        <li><strong>Visual Metrics</strong>:
+            <ul>
+                <li><strong>Language Distribution</strong>: Interactive bar charts showing top languages used.</li>
+                <li><strong>Engagement Stats</strong>: Total stars, forks, followers, and influence scores.</li>
+                <li><strong>Activity Tracking</strong>: Visual indicators of recent contribution activity.</li>
+            </ul>
+        </li>
+        <li><strong>AI-Powered Evaluation</strong>: Smart insights and "AI Score" for developer profiles.</li>
+        <li><strong>Top Repositories</strong>: Detailed cards highlighting the most popular repositories.</li>
+        <li><strong>Recent History</strong>: Local storage integration to quickly access previously analyzed profiles.</li>
+        <li><strong>Responsive Design</strong>: Built with a mobile-first approach using Tailwind CSS and Framer Motion.</li>
+    </ul>
 
-## Technology stack
+    <h2><span class="emoji">🛠️</span> Tech Stack</h2>
+    <p><strong>Frontend:</strong></p>
+    <ul>
+        <li><a href="https://react.dev/">React</a> (Vite)</li>
+        <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+        <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+        <li><a href="https://ui.shadcn.com/">shadcn/ui</a> (UI Components)</li>
+        <li><a href="https://www.framer.com/motion/">Framer Motion</a> (Animations)</li>
+        <li><a href="https://recharts.org/">Recharts</a> (Data Visualization)</li>
+        <li><a href="https://lucide.dev/">Lucide React</a> (Icons)</li>
+    </ul>
 
-- Frontend: Vite, React, TypeScript
-- UI: shadcn-ui, Tailwind CSS
-- Data fetching: Supabase Functions (Deno) for backend GitHub calls
-- AI gateway: Lovable AI gateway (configured via environment variable)
+    <p><strong>Backend & Services:</strong></p>
+    <ul>
+        <li><a href="https://supabase.com/">Supabase</a> (Backend as a Service)</li>
+        <li><a href="https://supabase.com/docs/guides/functions">Supabase Edge Functions</a> (Serverless logic for GitHub API handling)</li>
+        <li><a href="https://docs.github.com/en/rest">GitHub API</a></li>
+    </ul>
 
-## Repository structure (high level)
+    <h2><span class="emoji">⚙️</span> Prerequisites</h2>
+    <p>Before you begin, ensure you have the following installed:</p>
+    <ul>
+        <li><a href="https://nodejs.org/">Node.js</a> (v18+ recommended)</li>
+        <li><a href="https://www.npmjs.com/">npm</a> or <a href="https://bun.sh/">Bun</a></li>
+        <li>A <a href="https://supabase.com/">Supabase</a> project</li>
+    </ul>
 
-- [src](src) — React app and components
-- [src/lib/analyzeGitHub.ts](src/lib/analyzeGitHub.ts) — client helper that invokes the analysis function
-- [src/pages/AnalysisPage.tsx](src/pages/AnalysisPage.tsx) — page that runs and displays an analysis
-- [supabase/functions/analyze-github/index.ts](supabase/functions/analyze-github/index.ts) — serverless function that queries GitHub and the AI gateway
-- [package.json](package.json) — scripts and dependencies
+    <h2><span class="emoji">📦</span> Installation</h2>
 
-## Quick start (local)
+    <ol>
+        <li>
+            <strong>Clone the repository</strong>
+            <pre><code>git clone https://github.com/your-username/gitiq-analyzer.git
+cd gitiq-analyzer</code></pre>
+        </li>
+        <li>
+            <strong>Install dependencies</strong>
+            <pre><code>npm install</code></pre>
+        </li>
+        <li>
+            <strong>Configure Environment Variables</strong>
+            <p>Create a <code>.env</code> file in the root directory based on your Supabase configuration:</p>
+            <pre><code>VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key</code></pre>
+        </li>
+        <li>
+            <strong>Start the Development Server</strong>
+            <pre><code>npm run dev</code></pre>
+        </li>
+    </ol>
 
-Prerequisites: Node.js (v18+ recommended) and npm installed.
+    <h2><span class="emoji">☁️</span> Backend Setup (Supabase)</h2>
+    <p>This project relies on a Supabase Edge Function to securely communicate with the GitHub API.</p>
 
-1. Install dependencies
+    <ol>
+        <li>
+            <strong>Initialize Supabase locally</strong> (if not already done):
+            <pre><code>npx supabase init</code></pre>
+        </li>
+        <li>
+            <strong>Deploy the Edge Function</strong>:
+            <p>Ensure you have the <code>analyze-github</code> function in your <code>supabase/functions</code> directory.</p>
+            <pre><code>npx supabase functions deploy analyze-github</code></pre>
+        </li>
+        <li>
+            <strong>Set GitHub Token</strong>:
+            <p>For the analyzer to work with higher rate limits, set your GitHub Personal Access Token in Supabase secrets:</p>
+            <pre><code>npx supabase secrets set GITHUB_ACCESS_TOKEN=your_github_token</code></pre>
+        </li>
+    </ol>
 
-```bash
-npm install
-```
+    <h2><span class="emoji">📂</span> Project Structure</h2>
+    <pre><code>src/
+├── components/
+│   ├── analysis/       # Core analysis components (Charts, Metrics, AI Eval)
+│   ├── ui/             # Reusable UI components (Buttons, Cards, etc.)
+│   └── ...
+├── lib/
+│   ├── analyzeGitHub.ts # Main logic for fetching/parsing data
+│   └── utils.ts         # Utility functions
+├── pages/              # Route pages (Index, AnalysisPage)
+├── types/              # TypeScript definitions (GitHub types)
+└── integrations/       # Supabase client configuration</code></pre>
 
-2. Run the dev server
+    <h2><span class="emoji">🤝</span> Contributing</h2>
+    <p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
+    <ol>
+        <li>Fork the project</li>
+        <li>Create your feature branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+        <li>Commit your changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+        <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
+        <li>Open a Pull Request</li>
+    </ol>
 
-```bash
-npm run dev
-```
+    <h2><span class="emoji">📄</span> License</h2>
+    <p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
 
-3. Open the app at `http://localhost:5173` (Vite default)
-
-## Environment variables
-
-The serverless analysis function requires two environment variables. When deploying to Supabase Functions (or running the function in Deno), set these:
-
-- `GITHUB_API_TOKEN` — optional but recommended to avoid GitHub rate limits (personal access token with public_repo scope is sufficient)
-- `LOVABLE_API_KEY` — required: API key for the AI gateway used by the function
-
-When deploying, configure these in your Supabase project or your hosting provider's secrets/variables.
-
-## How analysis works (brief)
-
-1. The frontend calls the Supabase function `analyze-github` with `{ username }` (see [src/lib/analyzeGitHub.ts](src/lib/analyzeGitHub.ts)).
-2. The function fetches the GitHub profile and repositories, checks READMEs for top repos, computes metrics (stars, repo count, language distribution, README ratio, activity score), and selects top repos.
-3. The function then calls the Lovable AI gateway to request a structured JSON evaluation and returns the combined result.
-
-## Running tests
-
-The project uses Vitest. Run tests with:
-
-```bash
-npm test
-```
-
-## Deploying the Supabase function
-
-This repo contains the function at [supabase/functions/analyze-github/index.ts](supabase/functions/analyze-github/index.ts). Deploy using the Supabase CLI or manage functions in the Supabase dashboard.
-
-Example (Supabase CLI):
-
-```bash
-# from repo root
-supabase functions deploy analyze-github --project-ref <your-project-ref>
-```
-
-Note: the function is a small Deno server handler that expects a JSON body `{ "username": "<username>" }` and returns a JSON analysis. It requires `LOVABLE_API_KEY` to be configured in the environment.
-
-## Notes & troubleshooting
-
-- If AI evaluations fail, the function still returns computed `metrics` and `top repos` (see function error handling).
-- If you see GitHub rate limit errors, set `GITHUB_API_TOKEN`.
-- Recent analyses are saved to localStorage under the key `github-analyzer-recent`.
-
-## Contributing
-
-Contributions are welcome. Open an issue or a PR; run `npm install` and `npm run dev` to test locally.
-
-## License
-
-This project does not include a license file. Add a `LICENSE` if you plan to publish this repository.
-
----
+</body>
+</html>
