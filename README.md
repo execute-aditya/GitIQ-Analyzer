@@ -6,7 +6,7 @@
 
 ## 📸 Demo Preview
 
-![Dashboard Preview](./public/placeholder.svg)
+![Dashboard Preview](./public/Pasted_image.png)
 
 ---
 
